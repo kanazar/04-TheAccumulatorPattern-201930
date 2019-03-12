@@ -109,16 +109,15 @@ def draw_parallel_lines(n, point, length, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
-    point_type = rg.Point(point)
-    window_type = rg.RoseWindow(window)
-
+    draw_lines(n, point, length, window)
+    window.render()
 
 
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
     print()
     print('--------------------------------------------------')
-    print('Testing the  draw_lines  function:')
+    print('Testing the  draw_lines,  function:')
     print('  See the graphics windows that pop up.')
     print('--------------------------------------------------')
 

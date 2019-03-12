@@ -12,11 +12,11 @@ in its "in graphics" form:
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
+         Aaron Wilkin, their colleagues, and Ryo.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
-import builtins  # Never necessary, but here for pedagogical reasons
+import builtins  # Never necessary, but here for pedagogical reas
 
 
 # -----------------------------------------------------------------------------
@@ -114,7 +114,7 @@ def sum_from(m, n):
         sum_from(6, 9) returns 6 + 7 + 8 + 9, that is, 30.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT:  Your solution MUST
@@ -124,7 +124,11 @@ def sum_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    if m <= n:
+        sum = 0
+        for k in range(m, n + 1):
+            sum += k
+    return sum
 
 def run_test_factorial():
     """ Tests the   factorial   function. """
@@ -162,7 +166,6 @@ def run_test_factorial():
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # -------------------------------------------------------------------------
 
-
 def factorial(n):
     """
     What comes in:  The sole argument is a non-negative integer n.
@@ -173,13 +176,16 @@ def factorial(n):
         factorial(0) returns 1 (by definition).
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # -------------------------------------------------------------------------
-
+    sum = 1
+    for k in range(1, n + 1):
+        sum *= k
+    return sum
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
@@ -251,6 +257,13 @@ def count_cosines_from(m, n, x):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
+    if m <= n:
+        count = 0
+        for k in range(m, n +  1):
+           if x < math.cos(k):
+               count += 1
+    return count
+
 
 
 def run_test_sum_unit_fractions_from():
@@ -291,14 +304,18 @@ def sum_unit_fractions_from(m, n):
       -- sum_unit_fractions_from(10, 9000)  returns about  6.853
     """
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # DONE: 9. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    if m <= n:
+        sum = 0
+        for k in range(m, n +  1):
+            sum += 1/k
+    return sum
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
