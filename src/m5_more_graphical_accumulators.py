@@ -9,10 +9,11 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python. 
   
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Ryo.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 # -----------------------------------------------------------------------------
@@ -111,6 +112,14 @@ def draw_squares_from_circle(n, circle, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
+    window = rg.RoseWindow(400, 400)
+    for k in range(101):
+        center_point = rg.Point(200 + (80 * math.cos(k)), 200 + (80 * math.sin(k)))
+        circle = rg.Circle(center_point, 10)
+        circle.attach_to(window)
+    window.render()
+
+    window.close_on_mouse_click()
 
 
 def run_test_draw_circles_from_rectangle():
